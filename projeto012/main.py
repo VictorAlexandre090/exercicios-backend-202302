@@ -16,7 +16,7 @@ def getContinents():
     mycursor.close()
     return {"Continents": Continents_list}
 
-@app.get("/getContinent/{continent_id}")
+@app.get("/getregions/{continent_id}")
 def getContinent(continent_id : int):
     Continents_list = []
     mycursor = connection.mydb.cursor(dictionary=True)
