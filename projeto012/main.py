@@ -37,3 +37,4 @@ def getLanguages():
         Languages_list.append( data_languages )
     mycursor.close()
     return {"Languages": Languages_list}
+
