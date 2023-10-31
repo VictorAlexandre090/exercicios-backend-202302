@@ -58,3 +58,15 @@ def update_item(item_id: int, item_name: str, item_price: float ):
 @app.get('/list-menu')
 def list_menu():
     return {'Items': menu }
+
+@app.post('/createContinent/{item_id}/{item_name}/{item_price}')
+def create_item(item_id: int, item_name: str, item_price: float ):
+    search = list(filter(lambda x: x["id"] == item_id, menu))
+    if search != []:
+        return {'Error': 'Item exists'}
+    item = {}
+    item['id'] = item_id
+    item['name'] = item_name
+    item['price'] = item_price
+    menu.append(item)
+    return item
